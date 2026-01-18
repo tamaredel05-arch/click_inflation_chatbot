@@ -1,0 +1,376 @@
+{
+  "level1": {
+    "media_sources": [
+      {
+        "media_source": "google_ads_campaign_x_5482",
+        "hr": 14,
+        "mean_3d": 1523.45,
+        "cv": 2.8,
+        "std_3d": 420.12
+      },
+      {
+        "media_source": "facebook_app_install_7743",
+        "hr": 15,
+        "mean_3d": 892.33,
+        "cv": 2.5,
+        "std_3d": 315.67
+      },
+      {
+        "media_source": "tiktok_video_ads_9921",
+        "hr": 16,
+        "mean_3d": 1247.89,
+        "cv": 2.2,
+        "std_3d": 387.21
+      },
+      {
+        "media_source": "snapchat_story_boost_3344",
+        "hr": 18,
+        "mean_3d": 654.12,
+        "cv": 2.1,
+        "std_3d": 245.88
+      },
+      {
+        "media_source": "instagram_feed_promo_8856",
+        "hr": 12,
+        "mean_3d": 1089.67,
+        "cv": 1.9,
+        "std_3d": 298.44
+      },
+      {
+        "media_source": "twitter_promoted_tweet_4432",
+        "hr": 10,
+        "mean_3d": 432.55,
+        "cv": 1.7,
+        "std_3d": 196.33
+      },
+      {
+        "media_source": "linkedin_sponsored_post_6677",
+        "hr": 9,
+        "mean_3d": 789.24,
+        "cv": 1.5,
+        "std_3d": 275.19
+      },
+      {
+        "media_source": "youtube_trueview_campaign_2211",
+        "hr": 20,
+        "mean_3d": 567.78,
+        "cv": 1.3,
+        "std_3d": 162.45
+      },
+      {
+        "media_source": "pinterest_promoted_pin_5599",
+        "hr": 8,
+        "mean_3d": 345.91,
+        "cv": 1.1,
+        "std_3d": 150.22
+      },
+      {
+        "media_source": "reddit_sponsored_post_7788",
+        "hr": 22,
+        "mean_3d": 298.44,
+        "cv": 0.95,
+        "std_3d": 149.88
+      }
+    ]
+  },
+  "level2": {
+    "google_ads_campaign_x_5482": [
+      {"event_date": "2025-12-14", "event_hour": 0, "total_clicks": 1420},
+      {"event_date": "2025-12-14", "event_hour": 1, "total_clicks": 1350},
+      {"event_date": "2025-12-14", "event_hour": 2, "total_clicks": 1280},
+      {"event_date": "2025-12-14", "event_hour": 3, "total_clicks": 1210},
+      {"event_date": "2025-12-14", "event_hour": 4, "total_clicks": 1190},
+      {"event_date": "2025-12-14", "event_hour": 5, "total_clicks": 1240},
+      {"event_date": "2025-12-14", "event_hour": 6, "total_clicks": 1310},
+      {"event_date": "2025-12-14", "event_hour": 7, "total_clicks": 1380},
+      {"event_date": "2025-12-14", "event_hour": 8, "total_clicks": 1450},
+      {"event_date": "2025-12-14", "event_hour": 9, "total_clicks": 1520},
+      {"event_date": "2025-12-14", "event_hour": 10, "total_clicks": 1590},
+      {"event_date": "2025-12-14", "event_hour": 11, "total_clicks": 1650},
+      {"event_date": "2025-12-14", "event_hour": 12, "total_clicks": 1710},
+      {"event_date": "2025-12-14", "event_hour": 13, "total_clicks": 1780},
+      {"event_date": "2025-12-14", "event_hour": 14, "total_clicks": 2850},
+      {"event_date": "2025-12-14", "event_hour": 15, "total_clicks": 1690},
+      {"event_date": "2025-12-14", "event_hour": 16, "total_clicks": 1630},
+      {"event_date": "2025-12-14", "event_hour": 17, "total_clicks": 1570},
+      {"event_date": "2025-12-14", "event_hour": 18, "total_clicks": 1510},
+      {"event_date": "2025-12-14", "event_hour": 19, "total_clicks": 1450},
+      {"event_date": "2025-12-14", "event_hour": 20, "total_clicks": 1390},
+      {"event_date": "2025-12-14", "event_hour": 21, "total_clicks": 1330},
+      {"event_date": "2025-12-14", "event_hour": 22, "total_clicks": 1270},
+      {"event_date": "2025-12-14", "event_hour": 23, "total_clicks": 1220},
+      {"event_date": "2025-12-15", "event_hour": 0, "total_clicks": 1410},
+      {"event_date": "2025-12-15", "event_hour": 1, "total_clicks": 1340},
+      {"event_date": "2025-12-15", "event_hour": 2, "total_clicks": 1270},
+      {"event_date": "2025-12-15", "event_hour": 3, "total_clicks": 1200},
+      {"event_date": "2025-12-15", "event_hour": 4, "total_clicks": 1180},
+      {"event_date": "2025-12-15", "event_hour": 5, "total_clicks": 1230},
+      {"event_date": "2025-12-15", "event_hour": 6, "total_clicks": 1300},
+      {"event_date": "2025-12-15", "event_hour": 7, "total_clicks": 1370},
+      {"event_date": "2025-12-15", "event_hour": 8, "total_clicks": 1440},
+      {"event_date": "2025-12-15", "event_hour": 9, "total_clicks": 1510},
+      {"event_date": "2025-12-15", "event_hour": 10, "total_clicks": 1580},
+      {"event_date": "2025-12-15", "event_hour": 11, "total_clicks": 1640},
+      {"event_date": "2025-12-15", "event_hour": 12, "total_clicks": 1700},
+      {"event_date": "2025-12-15", "event_hour": 13, "total_clicks": 1770},
+      {"event_date": "2025-12-15", "event_hour": 14, "total_clicks": 2900},
+      {"event_date": "2025-12-15", "event_hour": 15, "total_clicks": 1680},
+      {"event_date": "2025-12-15", "event_hour": 16, "total_clicks": 1620},
+      {"event_date": "2025-12-15", "event_hour": 17, "total_clicks": 1560},
+      {"event_date": "2025-12-15", "event_hour": 18, "total_clicks": 1500},
+      {"event_date": "2025-12-15", "event_hour": 19, "total_clicks": 1440},
+      {"event_date": "2025-12-15", "event_hour": 20, "total_clicks": 1380},
+      {"event_date": "2025-12-15", "event_hour": 21, "total_clicks": 1320},
+      {"event_date": "2025-12-15", "event_hour": 22, "total_clicks": 1260},
+      {"event_date": "2025-12-15", "event_hour": 23, "total_clicks": 1210},
+      {"event_date": "2025-12-16", "event_hour": 0, "total_clicks": 1400},
+      {"event_date": "2025-12-16", "event_hour": 1, "total_clicks": 1330},
+      {"event_date": "2025-12-16", "event_hour": 2, "total_clicks": 1260},
+      {"event_date": "2025-12-16", "event_hour": 3, "total_clicks": 1190},
+      {"event_date": "2025-12-16", "event_hour": 4, "total_clicks": 1170},
+      {"event_date": "2025-12-16", "event_hour": 5, "total_clicks": 1220},
+      {"event_date": "2025-12-16", "event_hour": 6, "total_clicks": 1290},
+      {"event_date": "2025-12-16", "event_hour": 7, "total_clicks": 1360},
+      {"event_date": "2025-12-16", "event_hour": 8, "total_clicks": 1430},
+      {"event_date": "2025-12-16", "event_hour": 9, "total_clicks": 1500},
+      {"event_date": "2025-12-16", "event_hour": 10, "total_clicks": 1570},
+      {"event_date": "2025-12-16", "event_hour": 11, "total_clicks": 1630},
+      {"event_date": "2025-12-16", "event_hour": 12, "total_clicks": 1690},
+      {"event_date": "2025-12-16", "event_hour": 13, "total_clicks": 1760},
+      {"event_date": "2025-12-16", "event_hour": 14, "total_clicks": 3100},
+      {"event_date": "2025-12-16", "event_hour": 15, "total_clicks": 1670},
+      {"event_date": "2025-12-16", "event_hour": 16, "total_clicks": 1610},
+      {"event_date": "2025-12-16", "event_hour": 17, "total_clicks": 1550},
+      {"event_date": "2025-12-16", "event_hour": 18, "total_clicks": 1490},
+      {"event_date": "2025-12-16", "event_hour": 19, "total_clicks": 1430},
+      {"event_date": "2025-12-16", "event_hour": 20, "total_clicks": 1370},
+      {"event_date": "2025-12-16", "event_hour": 21, "total_clicks": 1310},
+      {"event_date": "2025-12-16", "event_hour": 22, "total_clicks": 1250},
+      {"event_date": "2025-12-16", "event_hour": 23, "total_clicks": 1200}
+    ],
+    "facebook_app_install_7743": [
+      {"event_date": "2025-12-14", "event_hour": 0, "total_clicks": 820},
+      {"event_date": "2025-12-14", "event_hour": 1, "total_clicks": 780},
+      {"event_date": "2025-12-14", "event_hour": 2, "total_clicks": 750},
+      {"event_date": "2025-12-14", "event_hour": 3, "total_clicks": 720},
+      {"event_date": "2025-12-14", "event_hour": 4, "total_clicks": 710},
+      {"event_date": "2025-12-14", "event_hour": 5, "total_clicks": 740},
+      {"event_date": "2025-12-14", "event_hour": 6, "total_clicks": 780},
+      {"event_date": "2025-12-14", "event_hour": 7, "total_clicks": 820},
+      {"event_date": "2025-12-14", "event_hour": 8, "total_clicks": 860},
+      {"event_date": "2025-12-14", "event_hour": 9, "total_clicks": 900},
+      {"event_date": "2025-12-14", "event_hour": 10, "total_clicks": 940},
+      {"event_date": "2025-12-14", "event_hour": 11, "total_clicks": 970},
+      {"event_date": "2025-12-14", "event_hour": 12, "total_clicks": 1000},
+      {"event_date": "2025-12-14", "event_hour": 13, "total_clicks": 1050},
+      {"event_date": "2025-12-14", "event_hour": 14, "total_clicks": 1100},
+      {"event_date": "2025-12-14", "event_hour": 15, "total_clicks": 2230},
+      {"event_date": "2025-12-14", "event_hour": 16, "total_clicks": 1050},
+      {"event_date": "2025-12-14", "event_hour": 17, "total_clicks": 980},
+      {"event_date": "2025-12-14", "event_hour": 18, "total_clicks": 920},
+      {"event_date": "2025-12-14", "event_hour": 19, "total_clicks": 860},
+      {"event_date": "2025-12-14", "event_hour": 20, "total_clicks": 800},
+      {"event_date": "2025-12-14", "event_hour": 21, "total_clicks": 750},
+      {"event_date": "2025-12-14", "event_hour": 22, "total_clicks": 710},
+      {"event_date": "2025-12-14", "event_hour": 23, "total_clicks": 680},
+      {"event_date": "2025-12-15", "event_hour": 0, "total_clicks": 810},
+      {"event_date": "2025-12-15", "event_hour": 1, "total_clicks": 770},
+      {"event_date": "2025-12-15", "event_hour": 2, "total_clicks": 740},
+      {"event_date": "2025-12-15", "event_hour": 3, "total_clicks": 710},
+      {"event_date": "2025-12-15", "event_hour": 4, "total_clicks": 700},
+      {"event_date": "2025-12-15", "event_hour": 5, "total_clicks": 730},
+      {"event_date": "2025-12-15", "event_hour": 6, "total_clicks": 770},
+      {"event_date": "2025-12-15", "event_hour": 7, "total_clicks": 810},
+      {"event_date": "2025-12-15", "event_hour": 8, "total_clicks": 850},
+      {"event_date": "2025-12-15", "event_hour": 9, "total_clicks": 890},
+      {"event_date": "2025-12-15", "event_hour": 10, "total_clicks": 930},
+      {"event_date": "2025-12-15", "event_hour": 11, "total_clicks": 960},
+      {"event_date": "2025-12-15", "event_hour": 12, "total_clicks": 990},
+      {"event_date": "2025-12-15", "event_hour": 13, "total_clicks": 1040},
+      {"event_date": "2025-12-15", "event_hour": 14, "total_clicks": 1090},
+      {"event_date": "2025-12-15", "event_hour": 15, "total_clicks": 2280},
+      {"event_date": "2025-12-15", "event_hour": 16, "total_clicks": 1040},
+      {"event_date": "2025-12-15", "event_hour": 17, "total_clicks": 970},
+      {"event_date": "2025-12-15", "event_hour": 18, "total_clicks": 910},
+      {"event_date": "2025-12-15", "event_hour": 19, "total_clicks": 850},
+      {"event_date": "2025-12-15", "event_hour": 20, "total_clicks": 790},
+      {"event_date": "2025-12-15", "event_hour": 21, "total_clicks": 740},
+      {"event_date": "2025-12-15", "event_hour": 22, "total_clicks": 700},
+      {"event_date": "2025-12-15", "event_hour": 23, "total_clicks": 670},
+      {"event_date": "2025-12-16", "event_hour": 0, "total_clicks": 800},
+      {"event_date": "2025-12-16", "event_hour": 1, "total_clicks": 760},
+      {"event_date": "2025-12-16", "event_hour": 2, "total_clicks": 730},
+      {"event_date": "2025-12-16", "event_hour": 3, "total_clicks": 700},
+      {"event_date": "2025-12-16", "event_hour": 4, "total_clicks": 690},
+      {"event_date": "2025-12-16", "event_hour": 5, "total_clicks": 720},
+      {"event_date": "2025-12-16", "event_hour": 6, "total_clicks": 760},
+      {"event_date": "2025-12-16", "event_hour": 7, "total_clicks": 800},
+      {"event_date": "2025-12-16", "event_hour": 8, "total_clicks": 840},
+      {"event_date": "2025-12-16", "event_hour": 9, "total_clicks": 880},
+      {"event_date": "2025-12-16", "event_hour": 10, "total_clicks": 920},
+      {"event_date": "2025-12-16", "event_hour": 11, "total_clicks": 950},
+      {"event_date": "2025-12-16", "event_hour": 12, "total_clicks": 980},
+      {"event_date": "2025-12-16", "event_hour": 13, "total_clicks": 1030},
+      {"event_date": "2025-12-16", "event_hour": 14, "total_clicks": 1080},
+      {"event_date": "2025-12-16", "event_hour": 15, "total_clicks": 2350},
+      {"event_date": "2025-12-16", "event_hour": 16, "total_clicks": 1030},
+      {"event_date": "2025-12-16", "event_hour": 17, "total_clicks": 960},
+      {"event_date": "2025-12-16", "event_hour": 18, "total_clicks": 900},
+      {"event_date": "2025-12-16", "event_hour": 19, "total_clicks": 840},
+      {"event_date": "2025-12-16", "event_hour": 20, "total_clicks": 780},
+      {"event_date": "2025-12-16", "event_hour": 21, "total_clicks": 730},
+      {"event_date": "2025-12-16", "event_hour": 22, "total_clicks": 690},
+      {"event_date": "2025-12-16", "event_hour": 23, "total_clicks": 660}
+    ]
+  },
+  "level3": {
+    "google_ads_campaign_x_5482": {
+      "14": [
+        {
+          "app_id": "com.casino.goldslots",
+          "clicks_this_hour": 850,
+          "avg_3d_same_hour": 180,
+          "deviation": 670,
+          "cv": 3.7
+        },
+        {
+          "app_id": "com.gaming.poker_master",
+          "clicks_this_hour": 520,
+          "avg_3d_same_hour": 210,
+          "deviation": 310,
+          "cv": 2.5
+        },
+        {
+          "app_id": "com.betting.sports_live",
+          "clicks_this_hour": 410,
+          "avg_3d_same_hour": 155,
+          "deviation": 255,
+          "cv": 2.6
+        },
+        {
+          "app_id": "com.slots.lucky777",
+          "clicks_this_hour": 380,
+          "avg_3d_same_hour": 190,
+          "deviation": 190,
+          "cv": 2.0
+        },
+        {
+          "app_id": "com.casino.blackjack_pro",
+          "clicks_this_hour": 290,
+          "avg_3d_same_hour": 145,
+          "deviation": 145,
+          "cv": 2.0
+        },
+        {
+          "app_id": "com.game.roulette_royal",
+          "clicks_this_hour": 220,
+          "avg_3d_same_hour": 125,
+          "deviation": 95,
+          "cv": 1.8
+        },
+        {
+          "app_id": "com.betting.horse_racing",
+          "clicks_this_hour": 180,
+          "avg_3d_same_hour": 110,
+          "deviation": 70,
+          "cv": 1.6
+        },
+        {
+          "app_id": "com.casino.bingo_blast",
+          "clicks_this_hour": 150,
+          "avg_3d_same_hour": 95,
+          "deviation": 55,
+          "cv": 1.6
+        },
+        {
+          "app_id": "com.slots.mega_jackpot",
+          "clicks_this_hour": 130,
+          "avg_3d_same_hour": 88,
+          "deviation": 42,
+          "cv": 1.5
+        },
+        {
+          "app_id": "com.game.card_shuffle",
+          "clicks_this_hour": 110,
+          "avg_3d_same_hour": 75,
+          "deviation": 35,
+          "cv": 1.5
+        }
+      ]
+    },
+    "facebook_app_install_7743": {
+      "15": [
+        {
+          "app_id": "com.social.messenger_pro",
+          "clicks_this_hour": 680,
+          "avg_3d_same_hour": 150,
+          "deviation": 530,
+          "cv": 3.5
+        },
+        {
+          "app_id": "com.dating.match_app",
+          "clicks_this_hour": 520,
+          "avg_3d_same_hour": 180,
+          "deviation": 340,
+          "cv": 2.9
+        },
+        {
+          "app_id": "com.game.puzzle_blast",
+          "clicks_this_hour": 390,
+          "avg_3d_same_hour": 140,
+          "deviation": 250,
+          "cv": 2.8
+        },
+        {
+          "app_id": "com.shopping.deal_hunter",
+          "clicks_this_hour": 310,
+          "avg_3d_same_hour": 120,
+          "deviation": 190,
+          "cv": 2.6
+        },
+        {
+          "app_id": "com.fitness.workout_buddy",
+          "clicks_this_hour": 260,
+          "avg_3d_same_hour": 110,
+          "deviation": 150,
+          "cv": 2.4
+        },
+        {
+          "app_id": "com.news.daily_feed",
+          "clicks_this_hour": 220,
+          "avg_3d_same_hour": 100,
+          "deviation": 120,
+          "cv": 2.2
+        },
+        {
+          "app_id": "com.music.stream_plus",
+          "clicks_this_hour": 180,
+          "avg_3d_same_hour": 90,
+          "deviation": 90,
+          "cv": 2.0
+        },
+        {
+          "app_id": "com.photo.editor_pro",
+          "clicks_this_hour": 150,
+          "avg_3d_same_hour": 80,
+          "deviation": 70,
+          "cv": 1.9
+        },
+        {
+          "app_id": "com.travel.booking_app",
+          "clicks_this_hour": 130,
+          "avg_3d_same_hour": 75,
+          "deviation": 55,
+          "cv": 1.7
+        },
+        {
+          "app_id": "com.food.delivery_now",
+          "clicks_this_hour": 110,
+          "avg_3d_same_hour": 70,
+          "deviation": 40,
+          "cv": 1.6
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Dashboard - בדיקה</title>
+    
+    <!-- React & ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel Standalone for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Recharts -->
+    <script src="https://unpkg.com/recharts@2.5.0/dist/Recharts.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Mock Data
+        const mockData = {
+            "level1": {
+                "media_sources": [
+                    {
+                        "media_source": "google_ads_campaign_x_5482",
+                        "hr": 14,
+                        "mean_3d": 1523.45,
+                        "cv": 2.8,
+                        "std_3d": 420.12
+                    },
+                    {
+                        "media_source": "facebook_app_install_7743",
+                        "hr": 15,
+                        "mean_3d": 892.33,
+                        "cv": 2.5,
+                        "std_3d": 315.67
+                    },
+                    {
+                        "media_source": "tiktok_video_ads_9921",
+                        "hr": 16,
+                        "mean_3d": 1247.89,
+                        "cv": 2.2,
+                        "std_3d": 387.21
+                    },
+                    {
+                        "media_source": "snapchat_story_boost_3344",
+                        "hr": 18,
+                        "mean_3d": 654.12,
+                        "cv": 2.1,
+                        "std_3d": 245.88
+                    },
+                    {
+                        "media_source": "instagram_feed_promo_8856",
+                        "hr": 12,
+                        "mean_3d": 1089.67,
+                        "cv": 1.9,
+                        "std_3d": 298.44
+                    },
+                    {
+                        "media_source": "twitter_promoted_tweet_4432",
+                        "hr": 10,
+                        "mean_3d": 432.55,
+                        "cv": 1.7,
+                        "std_3d": 196.33
+                    },
+                    {
+                        "media_source": "linkedin_sponsored_post_6677",
+                        "hr": 9,
+                        "mean_3d": 789.24,
+                        "cv": 1.5,
+                        "std_3d": 275.19
+                    },
+                    {
+                        "media_source": "youtube_trueview_campaign_2211",
+                        "hr": 20,
+                        "mean_3d": 567.78,
+                        "cv": 1.3,
+                        "std_3d": 162.45
+                    },
+                    {
+                        "media_source": "pinterest_promoted_pin_5599",
+                        "hr": 8,
+                        "mean_3d": 345.91,
+                        "cv": 1.1,
+                        "std_3d": 150.22
+                    },
+                    {
+                        "media_source": "reddit_sponsored_post_7788",
+                        "hr": 22,
+                        "mean_3d": 298.44,
+                        "cv": 0.95,
+                        "std_3d": 149.88
+                    }
+                ]
+            },
+            "level2": {
+                "google_ads_campaign_x_5482": [
+                    {"event_date": "2025-12-14", "event_hour": 0, "total_clicks": 1420},
+                    {"event_date": "2025-12-14", "event_hour": 1, "total_clicks": 1350},
+                    {"event_date": "2025-12-14", "event_hour": 2, "total_clicks": 1280},
+                    {"event_date": "2025-12-14", "event_hour": 3, "total_clicks": 1210},
+                    {"event_date": "2025-12-14", "event_hour": 4, "total_clicks": 1190},
+                    {"event_date": "2025-12-14", "event_hour": 5, "total_clicks": 1240},
+                    {"event_date": "2025-12-14", "event_hour": 6, "total_clicks": 1310},
+                    {"event_date": "2025-12-14", "event_hour": 7, "total_clicks": 1380},
+                    {"event_date": "2025-12-14", "event_hour": 8, "total_clicks": 1450},
+                    {"event_date": "2025-12-14", "event_hour": 9, "total_clicks": 1520},
+                    {"event_date": "2025-12-14", "event_hour": 10, "total_clicks": 1590},
+                    {"event_date": "2025-12-14", "event_hour": 11, "total_clicks": 1650},
+                    {"event_date": "2025-12-14", "event_hour": 12, "total_clicks": 1710},
+                    {"event_date": "2025-12-14", "event_hour": 13, "total_clicks": 1780},
+                    {"event_date": "2025-12-14", "event_hour": 14, "total_clicks": 2850},
+                    {"event_date": "2025-12-14", "event_hour": 15, "total_clicks": 1690},
+                    {"event_date": "2025-12-14", "event_hour": 16, "total_clicks": 1630},
+                    {"event_date": "2025-12-14", "event_hour": 17, "total_clicks": 1570},
+                    {"event_date": "2025-12-14", "event_hour": 18, "total_clicks": 1510},
+                    {"event_date": "2025-12-14", "event_hour": 19, "total_clicks": 1450},
+                    {"event_date": "2025-12-14", "event_hour": 20, "total_clicks": 1390},
+                    {"event_date": "2025-12-14", "event_hour": 21, "total_clicks": 1330},
+                    {"event_date": "2025-12-14", "event_hour": 22, "total_clicks": 1270},
+                    {"event_date": "2025-12-14", "event_hour": 23, "total_clicks": 1220},
+                    {"event_date": "2025-12-15", "event_hour": 0, "total_clicks": 1410},
+                    {"event_date": "2025-12-15", "event_hour": 1, "total_clicks": 1340},
+                    {"event_date": "2025-12-15", "event_hour": 2, "total_clicks": 1270},
+                    {"event_date": "2025-12-15", "event_hour": 3, "total_clicks": 1200},
+                    {"event_date": "2025-12-15", "event_hour": 4, "total_clicks": 1180},
+                    {"event_date": "2025-12-15", "event_hour": 5, "total_clicks": 1230},
+                    {"event_date": "2025-12-15", "event_hour": 6, "total_clicks": 1300},
+                    {"event_date": "2025-12-15", "event_hour": 7, "total_clicks": 1370},
+                    {"event_date": "2025-12-15", "event_hour": 8, "total_clicks": 1440},
+                    {"event_date": "2025-12-15", "event_hour": 9, "total_clicks": 1510},
+                    {"event_date": "2025-12-15", "event_hour": 10, "total_clicks": 1580},
+                    {"event_date": "2025-12-15", "event_hour": 11, "total_clicks": 1640},
+                    {"event_date": "2025-12-15", "event_hour": 12, "total_clicks": 1700},
+                    {"event_date": "2025-12-15", "event_hour": 13, "total_clicks": 1770},
+                    {"event_date": "2025-12-15", "event_hour": 14, "total_clicks": 2900},
+                    {"event_date": "2025-12-15", "event_hour": 15, "total_clicks": 1680},
+                    {"event_date": "2025-12-15", "event_hour": 16, "total_clicks": 1620},
+                    {"event_date": "2025-12-15", "event_hour": 17, "total_clicks": 1560},
+                    {"event_date": "2025-12-15", "event_hour": 18, "total_clicks": 1500},
+                    {"event_date": "2025-12-15", "event_hour": 19, "total_clicks": 1440},
+                    {"event_date": "2025-12-15", "event_hour": 20, "total_clicks": 1380},
+                    {"event_date": "2025-12-15", "event_hour": 21, "total_clicks": 1320},
+                    {"event_date": "2025-12-15", "event_hour": 22, "total_clicks": 1260},
+                    {"event_date": "2025-12-15", "event_hour": 23, "total_clicks": 1210},
+                    {"event_date": "2025-12-16", "event_hour": 0, "total_clicks": 1400},
+                    {"event_date": "2025-12-16", "event_hour": 1, "total_clicks": 1330},
+                    {"event_date": "2025-12-16", "event_hour": 2, "total_clicks": 1260},
+                    {"event_date": "2025-12-16", "event_hour": 3, "total_clicks": 1190},
+                    {"event_date": "2025-12-16", "event_hour": 4, "total_clicks": 1170},
+                    {"event_date": "2025-12-16", "event_hour": 5, "total_clicks": 1220},
+                    {"event_date": "2025-12-16", "event_hour": 6, "total_clicks": 1290},
+                    {"event_date": "2025-12-16", "event_hour": 7, "total_clicks": 1360},
+                    {"event_date": "2025-12-16", "event_hour": 8, "total_clicks": 1430},
+                    {"event_date": "2025-12-16", "event_hour": 9, "total_clicks": 1500},
+                    {"event_date": "2025-12-16", "event_hour": 10, "total_clicks": 1570},
+                    {"event_date": "2025-12-16", "event_hour": 11, "total_clicks": 1630},
+                    {"event_date": "2025-12-16", "event_hour": 12, "total_clicks": 1690},
+                    {"event_date": "2025-12-16", "event_hour": 13, "total_clicks": 1760},
+                    {"event_date": "2025-12-16", "event_hour": 14, "total_clicks": 3100},
+                    {"event_date": "2025-12-16", "event_hour": 15, "total_clicks": 1670},
+                    {"event_date": "2025-12-16", "event_hour": 16, "total_clicks": 1610},
+                    {"event_date": "2025-12-16", "event_hour": 17, "total_clicks": 1550},
+                    {"event_date": "2025-12-16", "event_hour": 18, "total_clicks": 1490},
+                    {"event_date": "2025-12-16", "event_hour": 19, "total_clicks": 1430},
+                    {"event_date": "2025-12-16", "event_hour": 20, "total_clicks": 1370},
+                    {"event_date": "2025-12-16", "event_hour": 21, "total_clicks": 1310},
+                    {"event_date": "2025-12-16", "event_hour": 22, "total_clicks": 1250},
+                    {"event_date": "2025-12-16", "event_hour": 23, "total_clicks": 1200}
+                ]
+            }
+        };
+
+        // AnomalyDashboard Component
+        function AnomalyDashboard({ data }) {
+            const [currentLevel, setCurrentLevel] = useState(1);
+            const [selectedMediaSource, setSelectedMediaSource] = useState(null);
+            const [selectedHour, setSelectedHour] = useState(null);
+
+            const getRowStyle = (cv) => {
+                if (cv >= 2.0) {
+                    return {
+                        backgroundColor: '#ffebee',
+                        borderRight: '4px solid #e53935'
+                    };
+                }
+                if (cv >= 1.0) {
+                    return {
+                        backgroundColor: '#fff3e0',
+                        borderRight: '4px solid #fb8c00'
+                    };
+                }
+                return {
+                    backgroundColor: 'white'
+                };
+            };
+
+            function Level1View() {
+                return (
+                    <div>
+                        {/* כותרת כחולה עליונה */}
+                        <div style={{
+                            background: 'linear-gradient(135deg, #2196f3 0%, #1976d2 100%)',
+                            color: 'white',
+                            padding: '30px',
+                            borderRadius: '15px 15px 0 0',
+                            textAlign: 'center',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                        }}>
+                            <h1 style={{
+                                fontSize: '28px',
+                                fontWeight: 'bold',
+                                margin: '0 0 10px 0'
+                            }}>
+                                Agent scanned 3,391,569 sources and found 20 anomalies
+                            </h1>
+                            <p style={{
+                                fontSize: '14px',
+                                opacity: 0.95,
+                                margin: 0
+                            }}>
+                                (Algorithm: Average + Standard Deviation by hour + Comparison to previous day)
+                            </p>
+                        </div>
+
+                        {/* גוף הטבלה */}
+                        <div style={{
+                            backgroundColor: 'white',
+                            padding: '30px',
+                            borderRadius: '0 0 15px 15px',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                        }}>
+                            {/* כותרת משנה */}
+                            <h2 style={{
+                                color: '#d32f2f',
+                                fontSize: '22px',
+                                fontWeight: 'bold',
+                                marginBottom: '25px',
+                                paddingBottom: '15px',
+                                borderBottom: '2px solid #f0f0f0',
+                                textAlign: 'center'
+                            }}>
+                                Abnormal click traffic on media sources
+                            </h2>
+
+                            {/* הטבלה */}
+                            <table style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                backgroundColor: 'white'
+                            }}>
+                                <thead>
+                                    <tr style={{
+                                        backgroundColor: '#fafafa',
+                                        borderBottom: '2px solid #e0e0e0'
+                                    }}>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>#</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'left',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>Media Source</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>Hour</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>Average</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>CV Rate</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>Std Deviation</th>
+                                        <th style={{
+                                            padding: '15px',
+                                            textAlign: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            color: '#333'
+                                        }}>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {data.level1.media_sources.map((source, index) => {
+                                        const rowStyle = getRowStyle(source.cv);
+                                        
+                                        return (
+                                            <tr 
+                                                key={source.id}
+                                                style={{
+                                                    ...rowStyle,
+                                                    borderBottom: '1px solid #f0f0f0',
+                                                    transition: 'all 0.2s ease',
+                                                    cursor: 'pointer'
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    e.currentTarget.style.backgroundColor = '#e3f2fd';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    e.currentTarget.style.backgroundColor = rowStyle.backgroundColor;
+                                                }}
+                                            >
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center',
+                                                    fontWeight: 'bold',
+                                                    color: '#666',
+                                                    fontSize: '14px'
+                                                }}>
+                                                    {index + 1}
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'left',
+                                                    fontFamily: 'Courier New, monospace',
+                                                    fontSize: '13px',
+                                                    color: '#333'
+                                                }}>
+                                                    {source.media_source}
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center',
+                                                    fontSize: '14px',
+                                                    color: '#333',
+                                                    fontWeight: 'bold'
+                                                }}>
+                                                    {source.hr}:00
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center',
+                                                    fontSize: '14px',
+                                                    color: '#333'
+                                                }}>
+                                                    {source.mean_3d.toFixed(2)}
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center'
+                                                }}>
+                                                    <span style={{
+                                                        color: source.cv >= 2.0 ? '#e53935' : 
+                                                               source.cv >= 1.0 ? '#fb8c00' : '#43a047',
+                                                        fontWeight: 'bold',
+                                                        fontSize: '16px'
+                                                    }}>
+                                                        {source.cv >= 2.0 ? '🔥 ' : 
+                                                         source.cv >= 1.0 ? '⚠️ ' : ''}
+                                                        {source.cv.toFixed(2)}
+                                                    </span>
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center',
+                                                    fontWeight: 'bold',
+                                                    color: '#666',
+                                                    fontSize: '14px'
+                                                }}>
+                                                    {source.std_3d.toFixed(2)}
+                                                </td>
+
+                                                <td style={{
+                                                    padding: '15px',
+                                                    textAlign: 'center'
+                                                }}>
+                                                    <button
+                                                        onClick={() => {
+                                                            setSelectedMediaSource(source.media_source);
+                                                            setCurrentLevel(2);
+                                                        }}
+                                                        style={{
+                                                            background: 'linear-gradient(135deg, #2196f3 0%, #1976d2 100%)',
+                                                            color: 'white',
+                                                            border: 'none',
+                                                            padding: '10px 25px',
+                                                            borderRadius: '8px',
+                                                            cursor: 'pointer',
+                                                            fontWeight: 'bold',
+                                                            fontSize: '14px',
+                                                            boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                                                            transition: 'all 0.3s ease'
+                                                        }}
+                                                        onMouseEnter={(e) => {
+                                                            e.target.style.transform = 'translateY(-2px)';
+                                                            e.target.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.target.style.transform = 'translateY(0)';
+                                                            e.target.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+                                                        }}
+                                                    >
+                                                        View Details →
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                );
+            }
+
+            function Level2View() {
+                const rawData = mockData.level2?.[selectedMediaSource] || [];
+                
+                // יצירת timestamp מ-event_date ו-event_hour
+                const chartData = rawData.map((item, index) => {
+                    const dayNum = Math.floor(index / 24) + 1;
+                    const timestamp = `Day ${dayNum} ${String(item.event_hour).padStart(2, '0')}:00`;
+                    
+                    return {
+                        timestamp: timestamp,
+                        clicks: item.total_clicks,
+                        hour: item.event_hour,
+                        date: item.event_date
+                    };
+                });
+                
+                return (
+                    <div style={{
+                        backgroundColor: 'white',
+                        padding: '30px',
+                        borderRadius: '15px',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }}>
+                        {/* כותרת */}
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginBottom: '30px'
+                        }}>
+                            <h2 style={{ 
+                                color: '#2196f3', 
+                                fontSize: '24px',
+                                margin: 0
+                            }}>
+                                Click Traffic - {selectedMediaSource}
+                            </h2>
+                            <button
+                                onClick={() => setCurrentLevel(1)}
+                                style={{
+                                    background: 'linear-gradient(135deg, #2196f3 0%, #1976d2 100%)',
+                                    color: 'white',
+                                    border: 'none',
+                                    padding: '10px 20px',
+                                    borderRadius: '8px',
+                                    cursor: 'pointer',
+                                    fontWeight: 'bold',
+                                    fontSize: '14px'
+                                }}
+                            >
+                                ← Back to Table
+                            </button>
+                        </div>
+
+                        {/* גרף */}
+                        <div style={{
+                            overflowX: 'auto',
+                            overflowY: 'hidden',
+                            paddingBottom: '20px'
+                        }}>
+                            <div style={{ minWidth: '1800px' }}>
+                                <Recharts.ResponsiveContainer width="100%" height={400}>
+                                    <Recharts.LineChart data={chartData}>
+                                        <Recharts.CartesianGrid strokeDasharray="3 3" />
+                                        <Recharts.XAxis 
+                                            dataKey="timestamp" 
+                                            angle={-45}
+                                            textAnchor="end"
+                                            height={100}
+                                            tick={{ fontSize: 12 }}
+                                        />
+                                        <Recharts.YAxis 
+                                            label={{ value: 'Clicks', angle: -90, position: 'insideLeft' }}
+                                        />
+                                        <Recharts.Tooltip />
+                                        <Recharts.Legend />
+                                        <Recharts.Line 
+                                            type="monotone" 
+                                            dataKey="clicks" 
+                                            stroke="#2196f3" 
+                                            strokeWidth={2}
+                                            dot={{ r: 3 }}
+                                            activeDot={{ r: 6 }}
+                                        />
+                                    </Recharts.LineChart>
+                                </Recharts.ResponsiveContainer>
+                            </div>
+                        </div>
+
+                        {/* מידע על הדאטה */}
+                        <div style={{
+                            marginTop: '20px',
+                            padding: '15px',
+                            backgroundColor: '#f5f5f5',
+                            borderRadius: '8px',
+                            textAlign: 'left',
+                            fontSize: '14px',
+                            color: '#666'
+                        }}>
+                            <strong>Data:</strong> 3 days × 24 hours = 72 data points
+                        </div>
+                    </div>
+                );
+            }
+
+            function Level3View() {
+                return (
+                    <div style={{
+                        backgroundColor: 'white',
+                        padding: '40px',
+                        borderRadius: '15px',
+                        textAlign: 'center',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }}>
+                        <h2 style={{ color: '#2196f3', fontSize: '24px' }}>
+                            Level 3: Drill Down
+                        </h2>
+                        <p style={{ color: '#666', fontSize: '16px', marginTop: '20px' }}>
+                            Coming soon: Detailed analysis
+                        </p>
+                    </div>
+                );
+            }
+
+            return (
+                <div style={{ 
+                    direction: 'ltr', 
+                    fontFamily: 'Arial, sans-serif',
+                    maxWidth: '1200px',
+                    margin: '0 auto'
+                }}>
+                    {currentLevel === 1 && <Level1View />}
+                    {currentLevel === 2 && <Level2View />}
+                    {currentLevel === 3 && <Level3View />}
+                </div>
+            );
+        }
+
+        // Render
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<AnomalyDashboard data={mockData} />);
+    </script>
+</body>
+</html>
